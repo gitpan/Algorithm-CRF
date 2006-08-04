@@ -1,0 +1,7 @@
+Revision history for Perl extension Algorithm::CRF.
+
+0.01  Thu Aug  3 00:32:05 2006
+	- original version; created by h2xs 1.23 with options
+		-A -n Algorithm::CRF crfpp.h
+	- only crf_learn binding is provided.
+
