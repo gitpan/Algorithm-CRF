@@ -7,3 +7,7 @@ Revision history for Perl extension Algorithm::CRF.
 
 0.02  Thu Aug  4 17:03:05 2006
 	- write description in CRF.pm
+
+0.03  Fri Feb 16 22:03:05 2007
+        - chasing CRF++-0.46
+

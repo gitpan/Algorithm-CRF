@@ -1,3 +1,6 @@
+#include "common.h"
+#include "encoder.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -8,11 +11,6 @@ extern "C" {
 }
 #endif
 
-//#include <iostream.h>
-#include <cstring>
-#include "ppport.h"
-
-#include "encoder.h"
 using namespace CRFPP;
 
 MODULE = Algorithm::CRF		PACKAGE = Algorithm::CRF		
@@ -20,7 +18,7 @@ MODULE = Algorithm::CRF		PACKAGE = Algorithm::CRF
 PROTOTYPES: ENABLE
 
 bool
-crfpp_learn( templfile, trainfile, modelfile, textmodelfile, maxitr, freq, eta, C, thread_num , convert)
+crfpp_learn( templfile, trainfile, modelfile, textmodelfile, maxitr, freq, eta, C, thread_num , shrinking_size, algorithm, convert)
 	const char *templfile
 	const char *trainfile
 	const char *modelfile
@@ -30,7 +28,9 @@ crfpp_learn( templfile, trainfile, modelfile, textmodelfile, maxitr, freq, eta, 
 	double eta
 	double C
 	unsigned short thread_num
-	int convert
+	unsigned short shrinking_size
+	int algorithm
+	bool convert
     CODE:
 CRFPP::Encoder encoder;
     if (thread_num > 1024)
@@ -50,7 +50,9 @@ CRFPP::Encoder encoder;
 	freq, 
 	eta, 
 	C, 
-	thread_num )) {
+	thread_num,
+        shrinking_size,
+	algorithm )) {
 	    //	cerr << encoder.what() << endl;
 	    fprintf (stderr,"%s\n",encoder.what());
 	    RETVAL = -1;

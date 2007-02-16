@@ -19,5 +19,7 @@ ok(Algorithm::CRF::crfpp_learn("t/template",
 	0.0001, # eta
 	10, # C
 	1, # threads
-	0)==0, "CRFPP_LEARN");
+	20, # shrinking_size
+        0, # algorithm , 0 for CRF
+        0)==0, "CRFPP_LEARN");
 

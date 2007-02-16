@@ -7,7 +7,6 @@ README
 common.h
 encoder.h
 lib/Algorithm/CRF.pm
-ppport.h
 t/0-basic.t
 t/1-crf_learn.t
 t/template
