@@ -25,7 +25,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 require XSLoader;
 XSLoader::load('Algorithm::CRF', $VERSION);
@@ -71,6 +71,18 @@ Stub documentation for Algorithm::CRF, created by h2xs. It looks like the
 author of the extension was negligent enough to leave the stub
 unedited.
 
+
+=head1 FUNCTIONS
+
+=cut 
+
+=head2 new
+    
+=cut
+
+=head2 crfpp_learn
+    
+=cut
 
 =head2 EXPORT
 
